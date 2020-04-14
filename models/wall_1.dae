@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.81.16 commit date:2019-12-04, commit time:11:32, hash:f1aa4d18d49d</authoring_tool>
     </contributor>
-    <created>2020-04-14T13:04:55</created>
-    <modified>2020-04-14T13:04:55</modified>
+    <created>2020-04-14T16:42:04</created>
+    <modified>2020-04-14T16:42:04</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -39,7 +39,7 @@
     <geometry id="Cube-mesh" name="Cube">
       <mesh>
         <source id="Cube-mesh-positions">
-          <float_array id="Cube-mesh-positions-array" count="60">0.5 -1 0 0.5 -1 -1 0.001999974 -1 0 0.001999974 -1 -1 0.001999974 -1.05 0 0.001999974 -1.05 -1 0.02199995 -1.05 0 0.02199995 -1.05 -1 0.02199995 -1.054 0 0.02199995 -1.054 -1 -0.5 -1 0 -0.5 -1 -1 -0.001999974 -1 0 -0.001999974 -1 -1 -0.001999974 -1.05 0 -0.001999974 -1.05 -1 -0.02199995 -1.05 0 -0.02199995 -1.05 -1 -0.02199995 -1.054 0 -0.02199995 -1.054 -1</float_array>
+          <float_array id="Cube-mesh-positions-array" count="60">-1 1 0 -1 0 0 -0.502 1 0 -0.502 0 0 -0.502 1 -0.04999995 -0.502 0 -0.04999995 -0.522 1 -0.04999995 -0.522 0 -0.04999995 -0.522 1 -0.0539999 -0.522 0 -0.0539999 0 1 0 0 0 0 -0.498 1 0 -0.498 0 0 -0.498 1 -0.04999995 -0.498 0 -0.04999995 -0.478 1 -0.04999995 -0.478 0 -0.04999995 -0.478 1 -0.0539999 -0.478 0 -0.0539999</float_array>
           <technique_common>
             <accessor source="#Cube-mesh-positions-array" count="20" stride="3">
               <param name="X" type="float"/>
@@ -49,7 +49,7 @@
           </technique_common>
         </source>
         <source id="Cube-mesh-normals">
-          <float_array id="Cube-mesh-normals-array" count="12">0 -1 0 1 0 0 0 1 0 -1 0 0</float_array>
+          <float_array id="Cube-mesh-normals-array" count="12">0 0 -1 -1 0 0 0 0 1 1 0 0</float_array>
           <technique_common>
             <accessor source="#Cube-mesh-normals-array" count="4" stride="3">
               <param name="X" type="float"/>
@@ -82,7 +82,7 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="Wall_1" name="Wall_1" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 1 0 0 1 1 0 0 0 1</matrix>
+        <matrix sid="transform">1 0 0 0.5 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Cube-mesh" name="Wall_1">
           <bind_material>
             <technique_common>
