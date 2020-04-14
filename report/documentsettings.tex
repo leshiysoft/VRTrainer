@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt,oneside]{extreport}
+%\documentclass[a4paper,12pt,oneside,draft]{extreport} % режим draft
+
+\tolerance=9999 % терпимость к увеличенным межсловарным интервалам
+\hbadness=9999 % выключить сообщения о плохости
+
+%%%%%%%%%%%% настройка шрифтов %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english,russian]{babel} % перенос слов
+
+% это для pdflatex
+% \usepackage[utf8]{inputenc}
+% \usepackage[T2A]{fontenc}
+
+% это для lualatex
+\usepackage{fontspec} % работа со шрифтами для LuaLaTeX
+\setmainfont[Ligatures=TeX]{PT Serif} % выбор главного шрифта
+\setsansfont[Ligatures=TeX]{PT Sans} % выбор sans шрифта
+\setmonofont[Ligatures=TeX]{PT Mono} % выбор mono шрифта
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{luacode}
+
+\linespread{1.3} % полуторный интервал (1.6 - двойной)
+
+\usepackage[left=2cm,right=1.5cm,top=1.5cm,bottom=2cm]{geometry} % поля страницы
+
+%\usepackage{amsmath} % Для формул
+%\usepackage{amsfonts, amssymb} % Математические шрифты и символы
+%\usepackage{amsthm} % окружения \newtheorem «теорема», «лемма» и т. п.
+
+%\usepackage[final]{graphicx} % Включаем возможность вставки изображений
+
+\usepackage{hyperref} % Включаем гиперссылки
+\usepackage{xcolor} % Для расскраски ссылок
+\definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0000FF} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH,
+			linkcolor=linkcolor,
+			urlcolor=urlcolor,
+			colorlinks=true} % Установка цветов для ссылок и гиперссылок
+
+%\pagestyle{empty} % без номеров страниц
+\pagestyle{plain} % с номерами страниц
+
+\setlength{\topskip}{0pt} % Допустимый отступ от верхней границы листа
+\usepackage{indentfirst} % Первая строка первого абзаца тоже с отступом
+\setlength{\parindent}{1.25cm} % Отступ абзаца
+
+%%%%%%%%%%%%%%%%%%% настройки нумерации %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*\thesection{\arabic{section}}
+
+\renewcommand{\labelenumii}{\theenumii.}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\renewcommand{\theenumiii}{\theenumii.\arabic{enumiii}}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
