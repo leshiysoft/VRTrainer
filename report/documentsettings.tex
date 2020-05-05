@@ -27,10 +27,11 @@
 %\setstretch{<factor>} % произвольный межстрочный интервал
 
 
-\usepackage[textsize=footnotesize]{todonotes} % Это для заметок на полях
-%\setlength{\footnotesep}{0.5cm} % между отдельными заметками
+%\setlength{\footnotesep}{0.5cm} % между отдельными сносками
 
+\usepackage[textsize=footnotesize, textwidth=0.5cm]{todonotes} % Это для заметок на полях
 \newcommand{\todoline}[1]{\todo[inline]{#1}}
+\newcommand{\todom}{\todo{!}}
 
 \usepackage[left=2cm,right=1.5cm,top=1.5cm,bottom=2cm]{geometry} % поля страницы
 
