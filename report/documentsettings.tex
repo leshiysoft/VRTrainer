@@ -20,10 +20,17 @@
 
 \usepackage{luacode}
 
-\usepackage[textsize=footnotesize]{todonotes} % Это для заметок на полях
-\newcommand{\todoline}[1]{\todo[inline]{#1}}
+\usepackage{setspace} % межстрочный интервал
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{<factor>} % произвольный межстрочный интервал
 
-\linespread{1.3} % полуторный интервал (1.6 - двойной)
+
+\usepackage[textsize=footnotesize]{todonotes} % Это для заметок на полях
+%\setlength{\footnotesep}{0.5cm} % между отдельными заметками
+
+\newcommand{\todoline}[1]{\todo[inline]{#1}}
 
 \usepackage[left=2cm,right=1.5cm,top=1.5cm,bottom=2cm]{geometry} % поля страницы
 
@@ -48,6 +55,12 @@
 \setlength{\topskip}{0pt} % Допустимый отступ от верхней границы листа
 \usepackage{indentfirst} % Первая строка первого абзаца тоже с отступом
 \setlength{\parindent}{1.25cm} % Отступ абзаца
+\setlength{\parskip}{0.2cm} % Отступ между абзацами
+
+
+\usepackage{enumitem}
+%\setlist{nolistsep, itemsep=0.3cm,parsep=0pt}
+\setlist{nolistsep} % убрать вертикальные отступы списков
 
 %%%%%%%%%%%%%%%%%%% настройки нумерации %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*\thesection{\arabic{section}}
