@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.82.7 commit date:2020-03-12, commit time:05:06, hash:375c7dc4caf4</authoring_tool>
     </contributor>
-    <created>2020-05-07T10:51:02</created>
-    <modified>2020-05-07T10:51:02</modified>
+    <created>2020-05-31T11:43:53</created>
+    <modified>2020-05-31T11:43:53</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -59,7 +59,7 @@
           </technique_common>
         </source>
         <source id="Cube_001-mesh-map-0">
-          <float_array id="Cube_001-mesh-map-0-array" count="72">0.2427579 0.6589522 0.2498236 0.842553 0.242758 0.8449784 0.2498235 0.6613777 0.2568892 0.8449784 0.2498236 0.842553 0.225 0.5 0.2499999 0 0.25 0.5 0.2498236 0.842553 0.2498236 0.8524658 0.242758 0.8449784 0.275 0.5 0.2499999 0 0.2749997 0 0.2427579 0.6589522 0.2568892 0.6589522 0.2498235 0.6613777 0.2427579 0.6589522 0.2498235 0.6613777 0.2498236 0.842553 0.2498235 0.6613777 0.2568892 0.6589522 0.2568892 0.8449784 0.225 0.5 0.225 0 0.2499999 0 0.2498236 0.842553 0.2568892 0.8449784 0.2498236 0.8524658 0.275 0.5 0.25 0.5 0.2499999 0 0.2427579 0.6589522 0.2498235 0.6514648 0.2568892 0.6589522</float_array>
+          <float_array id="Cube_001-mesh-map-0-array" count="72">0.8719704 0.8024888 0.8773589 0.942509 0.8719704 0.9443587 0.8773589 0.8043385 0.8827474 0.9443587 0.8773589 0.942509 0.25 0.25 0.2624999 0 0.2625 0.25 0.8773589 0.942509 0.8773589 0.9500689 0.8719704 0.9443587 0.25 0.25 0.2375 0 0.2499998 0 0.8719704 0.8024888 0.8827474 0.8024888 0.8773589 0.8043385 0.8719704 0.8024888 0.8773589 0.8043385 0.8773589 0.942509 0.8773589 0.8043385 0.8827474 0.8024888 0.8827474 0.9443587 0.25 0.25 0.25 0 0.2624999 0 0.8773589 0.942509 0.8827474 0.9443587 0.8773589 0.9500689 0.25 0.25 0.2375 0.25 0.2375 0 0.8719704 0.8024888 0.8773589 0.7967785 0.8827474 0.8024888</float_array>
           <technique_common>
             <accessor source="#Cube_001-mesh-map-0-array" count="36" stride="2">
               <param name="S" type="float"/>
@@ -81,9 +81,9 @@
   </library_geometries>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
-      <node id="corner" name="corner" type="NODE">
+      <node id="corner-bottom" name="corner-bottom" type="NODE">
         <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-        <instance_geometry url="#Cube_001-mesh" name="corner">
+        <instance_geometry url="#Cube_001-mesh" name="corner-bottom">
           <bind_material>
             <technique_common>
               <instance_material symbol="Material-material" target="#Material-material">
