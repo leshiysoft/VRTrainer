@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8671962132745861775}
   - component: {fileID: 8985665091010037218}
   m_Layer: 0
-  m_Name: doorway-1
+  m_Name: doorway-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3759211715570961899}
-  m_Mesh: {fileID: 4300000, guid: 9b25bb86cd8ca374b9adbea1d72bd1c0, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 4b4c4ffbd46eb3f47810af7c5aba631f, type: 2}
 --- !u!23 &8671962132745861775
 MeshRenderer:
   m_ObjectHideFlags: 0
