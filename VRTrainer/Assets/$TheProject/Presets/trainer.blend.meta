@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: PaintedClamp
+    second: {fileID: 2100000, guid: e9480cb3ac0aae24eb13e072f44bb2a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Red painted
     second: {fileID: 2100000, guid: 341bcb46abac6c0448f8f6ef2be0561d, type: 2}
   - first:
@@ -34,6 +39,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: painted-metal
     second: {fileID: 2100000, guid: 252fc96a1a5cff9489efb3c351a3d951, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thread-metal
+    second: {fileID: 2100000, guid: b7774ec653141564c952d993724433e6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
