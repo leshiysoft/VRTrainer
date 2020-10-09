@@ -12,6 +12,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: StairMetal
+    second: {fileID: 2100000, guid: 76d0470dee55e1749bfa81f174759eb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 1a721dd920ace634d9a2e78ab908c1aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: doorway-bottom
     second: {fileID: 2100000, guid: 252fc96a1a5cff9489efb3c351a3d951, type: 2}
   - first:
