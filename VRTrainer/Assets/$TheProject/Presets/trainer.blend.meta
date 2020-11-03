@@ -42,6 +42,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: painted-metal-dark
+    second: {fileID: 2100000, guid: d5f25ec07519a1342a4f74b66953a880, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: thread-metal
     second: {fileID: 2100000, guid: b7774ec653141564c952d993724433e6, type: 2}
   - first:
