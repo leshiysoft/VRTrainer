@@ -13,10 +13,13 @@ public class PositionInteractable : MonoBehaviour
 
     Vector3 AttachingOffset;
 
+    Quaternion initRotation;
+
     // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
+        initRotation = transform.rotation;
     }
 
     protected virtual void HandAttachedUpdate(Hand hand)
@@ -26,7 +29,7 @@ public class PositionInteractable : MonoBehaviour
         //transform.position = newPos;
         transform.position = hand.transform.position + AttachingOffset;
         //transform.rotation = hand.transform.rotation;
-
+        transform.rotation = initRotation;
         if (hand.IsGrabEnding(this.gameObject))
         {
             hand.DetachObject(gameObject);
@@ -34,6 +37,7 @@ public class PositionInteractable : MonoBehaviour
             float dStep = 1.0f / discreetStep;
             Vector3 newPos = new Vector3(Mathf.Round(theT.x * dStep) / dStep, Mathf.Round(theT.y * dStep) / dStep, Mathf.Round(theT.z * dStep) / dStep);
             transform.position = newPos;
+            //transform.position = theT;
         }
     }
 
