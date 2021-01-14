@@ -16,6 +16,7 @@ public class ImpactPoint : MonoBehaviour
     void Update()
     {
         WaterSurface.GetComponent<MeshRenderer>().material.SetVector("_CenterPoint", transform.position);
+        WaterSurface.GetComponent<WaterSurface>().incLevel();
     }
 
     void OnDisable()
