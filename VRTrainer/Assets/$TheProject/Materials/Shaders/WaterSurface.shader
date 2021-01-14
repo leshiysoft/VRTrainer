@@ -3,6 +3,10 @@
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
+		_CenterPoint ("CenterPoint", Vector) = (0,0,0)
+		_Speed ("Speed", Float) = 2.0
+		_Amplitude ("Amplitude", Float) = 1.0
+		_Frenq("Frenq", Float) = 5.0
         //_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_BumpMap("Bumpmap", 2D) = "bump" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
@@ -26,11 +30,16 @@
 
         //sampler2D _MainTex;
 		sampler2D _BumpMap;
+		float3 _CenterPoint;
+		float _Speed;
+		float _Amplitude;
+		float _Frenq;
 
         struct Input
         {
             //float2 uv_MainTex;
 			float2 uv_BumpMap;
+			float3 worldPos;
         };
 
         half _Glossiness;
@@ -52,7 +61,9 @@
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
+
+            //o.Alpha = c.a * (1/(1+0.3*r)); 
+			o.Alpha = c.a;
 			
 			float2 uvNormal = IN.uv_BumpMap;
 			uvNormal.x += _Time.x;
@@ -80,13 +91,23 @@
 
 			float3 normal = BlendNormals(BlendNormals(n1, n2), BlendNormals(n3, n4));
 
-			normal = BlendNormals(BlendNormals(n1, n2), BlendNormals(n3, n4));
-
 			normal.xy = 0.2 * normal.xy;
 
 			normal.z = sqrt(1.0 - saturate(dot(normal.xy, normal.xy)));
 
-			o.Normal = normal;
+			float2 radian = IN.worldPos.xz - _CenterPoint.xz;
+			float2 rr = abs(radian);
+			float r = sqrt(dot(rr, rr));
+
+			float ang = _Amplitude * (1 / (1 + r)) * (1 - abs(sin(_Frenq * (r - _Speed * _Time.x))));
+
+			radian = ang * normalize(radian);
+
+			float3 waveNormal;
+			waveNormal.xy = radian;
+			waveNormal.z = sqrt(1.0 - dot(waveNormal.xy, waveNormal.xy));
+
+			o.Normal = BlendNormals(waveNormal, normal);
         }
         ENDCG
     }
