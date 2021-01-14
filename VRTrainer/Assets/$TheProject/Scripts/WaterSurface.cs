@@ -7,7 +7,9 @@ public class WaterSurface : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Vector3 pos = transform.position;
+        pos.y = minLevel;
+        transform.position = pos;
     }
 
     // Update is called once per frame
