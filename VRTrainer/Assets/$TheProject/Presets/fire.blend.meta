@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Board
+    second: {fileID: 2100000, guid: 47c72ad74b8282049b82c591dee8bc63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodTable
+    second: {fileID: 2100000, guid: 4d88d0d98cf304d47b80c173daf3200d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: painted-deck
     second: {fileID: 2100000, guid: c96937374d68a344e84bb47148e0788a, type: 2}
   - first:
