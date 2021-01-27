@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BottomHat.002
+    second: {fileID: 2100000, guid: 341bcb46abac6c0448f8f6ef2be0561d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.002
+    second: {fileID: 2100000, guid: 341bcb46abac6c0448f8f6ef2be0561d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: HEAD
     second: {fileID: 2100000, guid: 9b6862291b35c0d4e9291158bd8e61f4, type: 2}
   - first:
@@ -39,6 +49,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.009
     second: {fileID: 2100000, guid: a2fe7e57ae3d3f546ba489ed6b1a4eb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tkan.002
+    second: {fileID: 2100000, guid: 411b48aafb647f34d978dc8aca6ee017, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TopHat.002
+    second: {fileID: 2100000, guid: 341bcb46abac6c0448f8f6ef2be0561d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
