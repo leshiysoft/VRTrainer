@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SandBoxUI : MonoBehaviour
@@ -11,6 +12,35 @@ public class SandBoxUI : MonoBehaviour
     public GameObject T_Tools;
     public GameObject H_Tools;
 
+
+    static SandBoxUI instance;
+
+    UnityAction<bool> theToggles;
+
+
+    SandBoxUI() : base()
+    {
+        instance = this;
+    }
+
+    static public void InitUI(TotalUI totalUI)
+    {
+        totalUI.CreateTextElement("Песочница");
+        if (instance)
+        {
+            instance.InitExUI(totalUI);
+        }
+        else
+        {
+            totalUI.CreateButtonElement("Загрузить сцену", () => { SceneManager.LoadScene("SandBox"); });
+        }
+    }
+
+    void InitExUI(TotalUI totalUI)
+    {
+        totalUI.CreateButtonElement("Перезагрузить сцену", () => { SceneManager.LoadScene("SandBox"); });
+        totalUI.CreateButtonElement("Песочная кнопка", () => { Debug.Log("Test Test"); });
+    }
 
     // Start is called before the first frame update
     void Start()
