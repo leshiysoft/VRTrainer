@@ -920,8 +920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 5, y: 0}
+  m_SizeDelta: {x: -5, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2256815900710946147
 MonoBehaviour:
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -964,6 +964,12 @@ MonoBehaviour:
   textPrefab: {fileID: 8257324944431690558, guid: f5cfeb6a8117624498fc4ab44d5bb376,
     type: 3}
   buttonPrefab: {fileID: 5380625730767595566, guid: e543a419fe26a2442a0d4daf6ebc5934,
+    type: 3}
+  togglePrefab: {fileID: 3755532759152882433, guid: c8f87b217dbcb364da8896c9422f5be9,
+    type: 3}
+  inputPrefab: {fileID: 4066005860673464261, guid: 2126c08ffbaae524897ff8a927251f82,
+    type: 3}
+  doubleInputPrefab: {fileID: 6210929319647275580, guid: 8bf3cefdec81dd84b8e807d38a0cb6a6,
     type: 3}
 --- !u!1 &2256815901016773850
 GameObject:

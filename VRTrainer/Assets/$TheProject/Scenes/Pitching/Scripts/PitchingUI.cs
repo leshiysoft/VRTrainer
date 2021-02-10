@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PitchingUI : MonoBehaviour
@@ -9,8 +10,13 @@ public class PitchingUI : MonoBehaviour
 
     static PitchingUI instance;
 
-    UnityAction<bool> theToggles;
+    public GameObject scene;
+    public GameObject pitcher;
 
+    private GameObject xAmpl;
+    private GameObject xFreq;
+    private GameObject zAmpl;
+    private GameObject zFreq;
 
     PitchingUI() : base()
     {
@@ -33,24 +39,54 @@ public class PitchingUI : MonoBehaviour
     void InitExUI(TotalUI totalUI)
     {
         totalUI.CreateButtonElement("Перезагрузить сцену", () => { SceneManager.LoadScene("Pitching"); });
-        totalUI.CreateButtonElement("Качковая кнопка", () => { this.Invoke("Test", 0); });
 
-        theToggles += Toggle;
-        totalUI.CreateToggleElement("Ткни меня", true, theToggles);
+        xAmpl = totalUI.CreateDoubleInputElement("X-Амплитуда", 1.0, changeXAmpl);
+        xFreq = totalUI.CreateDoubleInputElement("X-Частота", 1.0, changeXFreq);
+        zAmpl = totalUI.CreateDoubleInputElement("Z-Амплитуда", 1.0, changeZAmpl);
+        zFreq = totalUI.CreateDoubleInputElement("Z-Частота", 1.3, changeZFreq);
+        totalUI.CreateButtonElement("Сбросить значения", Reset);
+
     }
 
-    private void Toggle(bool isActive)
+    private void Reset()
     {
-        Debug.Log("toggled");
+        xAmpl.GetComponentInChildren<InputField>().text = "1,0";
+        xFreq.GetComponentInChildren<InputField>().text = "1,0";
+        zAmpl.GetComponentInChildren<InputField>().text = "1,0";
+        zFreq.GetComponentInChildren<InputField>().text = "1,3";
+
+        changeXAmpl("1,0");
+        changeXFreq("1,0");
+        changeZAmpl("1,0");
+        changeZFreq("1,3");
+
     }
 
-    // Start is called before the first frame update
+    private void changeXAmpl(string value)
+    {
+        scene.GetComponent<Pitching>().xAmplitude = (float)System.Convert.ToDouble(value);
+    }
+
+    private void changeXFreq(string value)
+    {
+        scene.GetComponent<Pitching>().xfreq = (float)System.Convert.ToDouble(value);
+    }
+
+    private void changeZAmpl(string value)
+    {
+        scene.GetComponent<Pitching>().zAmplitude = (float)System.Convert.ToDouble(value);
+    }
+
+    private void changeZFreq(string value)
+    {
+        scene.GetComponent<Pitching>().zfreq = (float)System.Convert.ToDouble(value);
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

@@ -10,6 +10,8 @@ public class TotalUI : MonoBehaviour
     public GameObject textPrefab;
     public GameObject buttonPrefab;
     public GameObject togglePrefab;
+    public GameObject inputPrefab;
+    public GameObject doubleInputPrefab;
 
     void Start()
     {
@@ -29,6 +31,22 @@ public class TotalUI : MonoBehaviour
             EquipmentUI.InitUI(this);
             SandBoxUI.InitUI(this);
         }
+    }
+
+    public void CreateInputElement(string text, UnityAction<string> action)
+    {
+        var input = Instantiate(inputPrefab.gameObject, transform, false) as GameObject;
+        input.GetComponentInChildren<Text>().text = text;
+        input.GetComponent<InputField>().onValueChanged.AddListener(action);
+    }
+
+    public GameObject CreateDoubleInputElement(string text, double value, UnityAction<string> action)
+    {
+        var input = Instantiate(doubleInputPrefab.gameObject, transform, false) as GameObject;
+        input.GetComponentInChildren<Text>().text = text;
+        input.GetComponentInChildren<InputField>().text = value.ToString();
+        input.GetComponentInChildren<InputField>().onValueChanged.AddListener(action);
+        return input;
     }
 
     public void CreateTextElement(string text)

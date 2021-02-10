@@ -21,9 +21,9 @@ public class Pitching : MonoBehaviour
     float time = 0;
 
     public float xAmplitude = 1;
-    public float xfrenq = 1;
+    public float xfreq = 1;
     public float zAmplitude = 1;
-    public float zfrenq = 1.3f;
+    public float zfreq = 1.3f;
 
     // Update is called once per frame
     void Update()
@@ -32,7 +32,7 @@ public class Pitching : MonoBehaviour
         {
             transform.position = new Vector3(player.position.x, transform.position.y, player.position.z);
             time += Time.deltaTime;
-            transform.rotation = Quaternion.EulerAngles(xAmplitude*Mathf.PI/180*Mathf.Sin(xfrenq*time), 0f, zAmplitude * Mathf.PI / 180 * Mathf.Sin(zfrenq * time));
+            transform.rotation = Quaternion.EulerAngles(xAmplitude*Mathf.PI/180*Mathf.Sin(xfreq*time), 0f, zAmplitude * Mathf.PI / 180 * Mathf.Sin(zfreq * time));
         } else
         {
             transform.position = new Vector3(gameObject.transform.parent.position.x -player.position.x, transform.position.y, gameObject.transform.parent.position.z - player.position.z);
