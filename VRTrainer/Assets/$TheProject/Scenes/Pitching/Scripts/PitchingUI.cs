@@ -11,7 +11,6 @@ public class PitchingUI : MonoBehaviour
     static PitchingUI instance;
 
     public GameObject scene;
-    public GameObject pitcher;
 
     private GameObject xAmpl;
     private GameObject xFreq;
@@ -40,9 +39,9 @@ public class PitchingUI : MonoBehaviour
     {
         totalUI.CreateButtonElement("Перезагрузить сцену", () => { SceneManager.LoadScene("Pitching"); });
 
-        xAmpl = totalUI.CreateDoubleInputElement("X-Амплитуда", 1.0, changeXAmpl);
+        xAmpl = totalUI.CreateDoubleInputElement("X-Амплитуда", 0.0, changeXAmpl);
         xFreq = totalUI.CreateDoubleInputElement("X-Частота", 1.0, changeXFreq);
-        zAmpl = totalUI.CreateDoubleInputElement("Z-Амплитуда", 1.0, changeZAmpl);
+        zAmpl = totalUI.CreateDoubleInputElement("Z-Амплитуда", 0.0, changeZAmpl);
         zFreq = totalUI.CreateDoubleInputElement("Z-Частота", 1.3, changeZFreq);
         totalUI.CreateButtonElement("Сбросить значения", Reset);
 
@@ -50,14 +49,14 @@ public class PitchingUI : MonoBehaviour
 
     private void Reset()
     {
-        xAmpl.GetComponentInChildren<InputField>().text = "1,0";
+        xAmpl.GetComponentInChildren<InputField>().text = "0,0";
         xFreq.GetComponentInChildren<InputField>().text = "1,0";
-        zAmpl.GetComponentInChildren<InputField>().text = "1,0";
+        zAmpl.GetComponentInChildren<InputField>().text = "0,0";
         zFreq.GetComponentInChildren<InputField>().text = "1,3";
 
-        changeXAmpl("1,0");
+        changeXAmpl("0,0");
         changeXFreq("1,0");
-        changeZAmpl("1,0");
+        changeZAmpl("0,0");
         changeZFreq("1,3");
 
     }

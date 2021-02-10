@@ -735,10 +735,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenePitcher: 0
   player: {fileID: 2003634412}
-  xAmplitude: 1
-  xfrenq: 1
-  zAmplitude: 1
-  zfrenq: 1.3
+  xAmplitude: 0
+  xfreq: 1
+  zAmplitude: 0
+  zfreq: 1.3
 --- !u!1001 &962539699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1123,10 +1123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenePitcher: 1
   player: {fileID: 2003634412}
-  xAmplitude: 1
-  xfrenq: 1
-  zAmplitude: 1
-  zfrenq: 1.3
+  xAmplitude: 0
+  xfreq: 1
+  zAmplitude: 0
+  zfreq: 1.3
 --- !u!4 &1716273614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4562553892548699419, guid: 9b7151a9c330e2c4ab27168a5ce3300c,
