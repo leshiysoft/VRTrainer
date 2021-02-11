@@ -537,8 +537,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2256815900231363338}
   m_HandleRect: {fileID: 2256815900231363339}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6333334
+  m_Value: 1.0000002
+  m_Size: 0.63333344
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -970,6 +970,8 @@ MonoBehaviour:
   inputPrefab: {fileID: 4066005860673464261, guid: 2126c08ffbaae524897ff8a927251f82,
     type: 3}
   doubleInputPrefab: {fileID: 6210929319647275580, guid: 8bf3cefdec81dd84b8e807d38a0cb6a6,
+    type: 3}
+  twiceTogglePrefab: {fileID: 1312595911280643118, guid: 0d9cc0906ac34dc4885334f542656f4e,
     type: 3}
 --- !u!1 &2256815901016773850
 GameObject:

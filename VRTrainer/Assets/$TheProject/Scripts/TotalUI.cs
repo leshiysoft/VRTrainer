@@ -12,6 +12,7 @@ public class TotalUI : MonoBehaviour
     public GameObject togglePrefab;
     public GameObject inputPrefab;
     public GameObject doubleInputPrefab;
+    public GameObject twiceTogglePrefab;
 
     void Start()
     {
@@ -67,6 +68,24 @@ public class TotalUI : MonoBehaviour
         var toggle = Instantiate(togglePrefab.gameObject, transform, false) as GameObject;
         toggle.GetComponentInChildren<Text>().text = text;
         toggle.GetComponent<Toggle>().onValueChanged.AddListener(action);
+        toggle.GetComponent<Toggle>().isOn = isActive;
+    }
+
+    public void CreateTwiceToggleElement(string text1, bool isActive1, UnityAction<bool> action1, 
+                                        string text2, bool isActive2, UnityAction<bool> action2)
+    {
+        var toggle = Instantiate(twiceTogglePrefab.gameObject, transform, false) as GameObject;
+        Toggle ToggleLeft = toggle.transform.Find("left").gameObject.GetComponent<Toggle>();
+        Toggle ToggleRight = toggle.transform.Find("right").gameObject.GetComponent<Toggle>();
+
+        ToggleLeft.gameObject.GetComponentInChildren<Text>().text = text1;
+        ToggleRight.gameObject.GetComponentInChildren<Text>().text = text2;
+
+        ToggleLeft.onValueChanged.AddListener(action1);
+        ToggleRight.onValueChanged.AddListener(action2);
+
+        ToggleLeft.isOn = isActive1;
+        ToggleRight.isOn = isActive2;
     }
 
     void Update()
