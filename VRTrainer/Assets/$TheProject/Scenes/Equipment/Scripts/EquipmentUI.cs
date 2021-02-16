@@ -7,6 +7,9 @@ public class EquipmentUI : MonoBehaviour
 {
     static EquipmentUI instance;
 
+    private float workPressure = 0;
+    private float leakSpeed = 0;
+
     EquipmentUI() : base()
     {
         instance = this;
@@ -28,7 +31,18 @@ public class EquipmentUI : MonoBehaviour
     void InitExUI(TotalUI totalUI)
     {
         totalUI.CreateButtonElement("Перезагрузить сцену", () => { SceneManager.LoadScene("Equipment"); });
-        totalUI.CreateButtonElement("Экипировочная кнопка", () => { Debug.Log("Test Test"); });
+        totalUI.CreateDoubleInputElement("Рабочее давление", 0, setWorkPressure);
+        totalUI.CreateDoubleInputElement("Скорость стравливания МПа/с", 0, setWorkPressure);
+    }
+
+    void setLeakPressure(string value)
+    {
+        leakSpeed = (float)System.Convert.ToDouble(value);
+    }
+
+    void setWorkPressure(string value)
+    {
+        workPressure = (float)System.Convert.ToDouble(value);
     }
 
     // Start is called before the first frame update
